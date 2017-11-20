@@ -1,0 +1,6 @@
+{
+  "env": "development",
+  "mongo": {
+    "uri": "mongo-development"
+  }
+}

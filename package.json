@@ -6,8 +6,7 @@
   "author": "Alex Panchuk <apanchuk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start":
-      "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/server.js",
+    "start": "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/server.js",
     "dev": "nodemon dev.js",
     "lint:js": "eslint ./src",
     "precommit": "eslint ./src"
@@ -25,12 +24,17 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
+    "config": "^1.28.1",
+    "keymirror": "^0.1.1",
     "koa": "^2.4.1",
     "rimraf": "^2.6.2"
   },
   "eslintConfig": {
     "root": true,
-    "extends": ["airbnb-base", "prettier"],
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
     "env": {
       "node": true
     },
