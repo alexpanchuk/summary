@@ -1,6 +1,9 @@
 ### Summary app (making through the Khotey's video course)
 
+Connecting MongoDB
+
 Was done
-- create config files
-- create enviroment constants
-- create utils for define enviroment
+- install dontenv to take enviroment's variables from .env, add to .env .gitignore
+- create db on mlab.com
+- install Mongoose
+- connecting MongoDB
