@@ -5,5 +5,5 @@ Connecting MongoDB
 Was done
 - install dontenv to take enviroment's variables from .env, add to .env .gitignore
 - create db on mlab.com
-- install Mongoose
+- install Mongoose, create mongooseConnector
 - connecting MongoDB
