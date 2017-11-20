@@ -25,6 +25,7 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
+    "koa": "^2.4.1",
     "rimraf": "^2.6.2"
   },
   "eslintConfig": {
