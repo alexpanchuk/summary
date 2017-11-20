@@ -6,7 +6,8 @@
   "author": "Alex Panchuk <apanchuk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/main.js",
+    "start":
+      "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/server.js",
     "dev": "nodemon dev.js",
     "lint:js": "eslint ./src",
     "precommit": "eslint ./src"
