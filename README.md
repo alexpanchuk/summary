@@ -1,3 +1,6 @@
 ### Summary app (making through the Khotey's video course)
 
-WIP
+Was done
+- configure babel
+- configure eslint
+- add simple server
