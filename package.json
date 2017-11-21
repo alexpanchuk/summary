@@ -22,13 +22,20 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
+    "bcrypt": "^1.0.3",
     "config": "^1.28.1",
     "dotenv": "^4.0.0",
     "keymirror": "^0.1.1",
     "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.3.0",
+    "lodash": "^4.17.4",
     "mongoose": "^4.13.4",
+    "mongoose-unique-validator": "^1.0.6",
     "rimraf": "^2.6.2"
   },
   "eslintConfig": {
@@ -42,6 +49,10 @@
     },
     "rules": {
       "no-console": 0,
+      "func-names": 0,
+      "import/prefer-default-export": 0,
+      "import/no-named-as-default": 0,
+      "import/no-named-as-default-member": 0,
       "linebreak-style": 0
     }
   },
@@ -53,6 +64,14 @@
           "targets": {
             "node": "current"
           }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "transform-object-rest-spread",
+        {
+          "useBuiltIns": true
         }
       ]
     ]
