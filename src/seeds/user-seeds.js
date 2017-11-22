@@ -2,10 +2,10 @@ import faker from "faker"
 import _ from "lodash"
 import { User } from "../modules/users/models"
 
-function init() {
+function init(amount) {
   const promises = []
 
-  _.times(20, () => {
+  _.times(amount, () => {
     const userPromise = User.create({
       email: faker.internet.email(),
       firstName: faker.name.firstName(),

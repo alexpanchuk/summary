@@ -6,3 +6,4 @@ Was done
 
 * refactoring: create UserService
 * refactoring: create SummaryService
+* create SummarySeeds
