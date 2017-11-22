@@ -5,3 +5,4 @@ Create Summary
 Was done
 
 * create SummarySchema
+* create summariesController

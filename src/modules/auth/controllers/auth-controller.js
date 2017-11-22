@@ -1,6 +1,6 @@
 import pick from "lodash/pick"
 import jwtService from "../../../services/jwt-service"
-import { User } from "../../users"
+import { User } from "../../users/models"
 
 export default {
   async singUp(ctx) {

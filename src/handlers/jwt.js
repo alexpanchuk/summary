@@ -1,5 +1,5 @@
 import jwtService from "../services/jwt-service"
-import { User } from "../modules/users"
+import { User } from "../modules/users/models"
 
 export default () => async (ctx, next) => {
   const { authorization } = ctx.headers

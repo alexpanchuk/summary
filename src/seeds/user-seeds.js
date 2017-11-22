@@ -1,6 +1,6 @@
 import faker from "faker"
 import _ from "lodash"
-import { User } from "../modules/users"
+import { User } from "../modules/users/models"
 
 function init() {
   const promises = []

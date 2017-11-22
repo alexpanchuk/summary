@@ -1,8 +1,10 @@
 import Router from "koa-router"
-import auth from "./auth"
+import authRoutes from "./auth"
+import summariesRoutes from "./summaries"
 
 const router = new Router({ prefix: "/api" })
 
-router.use(auth)
+router.use(authRoutes)
+router.use(summariesRoutes)
 
 export default router.routes()
