@@ -5,3 +5,4 @@ Seeds
 Was done
 
 * create seed script
+* create userSeeds
