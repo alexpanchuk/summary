@@ -1,6 +1,6 @@
 import logger from "koa-logger"
-import handleErrors from "./error"
 import bodyParser from "koa-bodyparser"
+import handleErrors from "./error"
 import jwt from "./jwt"
 import { IS_DEV } from "../utils/env"
 
