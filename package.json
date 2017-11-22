@@ -10,6 +10,7 @@
       "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/server.js",
     "dev": "nodemon dev.js",
     "seed": "babel-node src/seeds",
+    "dropdb": "babel-node src/utils/dropdb.js",
     "lint:js": "eslint ./src",
     "precommit": "eslint ./src"
   },
