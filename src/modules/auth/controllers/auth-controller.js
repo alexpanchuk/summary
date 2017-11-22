@@ -1,7 +1,6 @@
-import jwt from "jsonwebtoken"
 import pick from "lodash/pick"
+import jwtService from "../../../../services/jwt-service"
 import { User } from "../../users"
-import { JWT_SECRET } from "../../../config"
 
 export default {
   async singUp(ctx) {
@@ -29,7 +28,7 @@ export default {
       ctx.throw(400, { message: "Invalid password" })
     }
 
-    const token = jwt.sign({ email }, JWT_SECRET)
+    const token = await jwtService.genToken({ email })
 
     ctx.body = { data: token }
   }
