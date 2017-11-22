@@ -1,8 +1,7 @@
 ### Summary app (making through the Khotey's video course)
 
-Seeds
+Create Summary
 
 Was done
 
-* create seed script
-* create userSeeds
+* create SummarySchema
