@@ -8,4 +8,3 @@ Was done
 * wrap initConnectors in try-catch
 * add jwt authorizaton
 * create jwtService
-*
