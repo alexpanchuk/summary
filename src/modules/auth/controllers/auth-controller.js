@@ -1,5 +1,5 @@
 import pick from "lodash/pick"
-import jwtService from "../../../../services/jwt-service"
+import jwtService from "../../../services/jwt-service"
 import { User } from "../../users"
 
 export default {
