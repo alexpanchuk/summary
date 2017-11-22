@@ -7,7 +7,9 @@ export default mongoUri => {
     throw new Error("Mongo URI is not defined")
   }
 
-  return mongoose.connect(mongoUri, { useMongoClient: true }).then(() => {
+  return mongoose.connect(mongoUri, { useMongoClient: true }).then(mongodb => {
     console.log("Mongo connected")
+
+    return mongodb
   })
 }
