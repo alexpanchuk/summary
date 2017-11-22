@@ -4,4 +4,5 @@ Refactoring and Summary seeds
 
 Was done
 
-* refactoring. Create UserService
+* refactoring: create UserService
+* refactoring: create SummaryService

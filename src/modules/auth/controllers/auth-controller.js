@@ -1,12 +1,12 @@
 import pick from "lodash/pick"
 import jwtService from "../../../services/jwt-service"
-import userService from "../../users/services/user-service"
+import { userService } from "../../users/services"
 import { User } from "../../users/models"
 
 export default {
   async singUp(ctx) {
-    const newUser = pick(ctx.request.body, User.createFields)
-    const { _id } = await userService.createUser(newUser)
+    const userData = pick(ctx.request.body, User.createFields)
+    const { _id } = await userService.createUser(userData)
     const user = await userService.getUserWithPublicFields({ _id })
 
     ctx.body = { data: user }
