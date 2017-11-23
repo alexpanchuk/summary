@@ -49,6 +49,9 @@
     "env": {
       "node": true
     },
+    "globals": {
+      "AppError": true
+    },
     "rules": {
       "no-console": 0,
       "func-names": 0,

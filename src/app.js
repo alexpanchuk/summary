@@ -2,6 +2,9 @@ import Koa from "koa"
 import initConnectors from "./connectors"
 import initHandlers from "./handlers"
 import modules from "./modules"
+import AppError from "./helpers/app-error"
+
+global.AppError = AppError
 
 initConnectors()
 

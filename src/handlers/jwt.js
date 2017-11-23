@@ -7,7 +7,7 @@ export default () => async (ctx, next) => {
   if (authorization) {
     try {
       const { email } = await jwtService.verify(authorization)
-      ctx.user = await User.findOne({ email })
+      ctx.state.user = await User.findOne({ email })
     } catch (error) {
       ctx.throw(401, { message: "Unauthorized. Invalid token" })
     }
