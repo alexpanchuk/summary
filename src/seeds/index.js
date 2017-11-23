@@ -8,14 +8,18 @@ async function initSeeds() {
 
   await mongoConnection.dropDatabase()
 
-  const users = await userSeed(10)
-  const summaries = await summarySeed(10, users)
+  try {
+    const users = await userSeed(10)
+    const summaries = await summarySeed(10, users)
 
-  console.log(users)
-  console.log("=".repeat(50))
-  console.log(summaries)
-
-  mongoConnection.close()
+    console.log(users)
+    console.log("=".repeat(50))
+    console.log(summaries)
+  } catch (error) {
+    console.log(error)
+  } finally {
+    mongoConnection.close()
+  }
 }
 
 initSeeds()

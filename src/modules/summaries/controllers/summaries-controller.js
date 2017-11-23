@@ -13,6 +13,7 @@ export default {
       const { _id } = await summaryService.createSummary(summaryData)
       const summary = await Summary.findOne({ _id })
 
+      ctx.status = 201
       ctx.body = { data: summary }
     } catch (error) {
       ctx.throw(400, error)

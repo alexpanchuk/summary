@@ -1,9 +1,7 @@
 ### Summary app (making through the Khotey's video course)
 
-Refactoring and Summary seeds
+Summary update
 
 Was done
 
-* refactoring: create UserService
-* refactoring: create SummaryService
-* create SummarySeeds
+*

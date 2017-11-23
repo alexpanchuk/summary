@@ -3,6 +3,10 @@ import _ from "lodash"
 import { Summary } from "../modules/summaries/models"
 
 function init(amount, users) {
+  if (!users || !users.length) {
+    throw Error("Users in SummarySeed are required")
+  }
+
   const promises = []
 
   _.times(amount, () => {
