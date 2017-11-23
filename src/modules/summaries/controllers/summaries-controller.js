@@ -18,6 +18,7 @@ export default {
 
   async update(ctx) {
     const dataToUpdate = pick(ctx.request.body, Summary.createFields)
+    console.log(`data to update: ${dataToUpdate.title}`)
     const updatedSummary = await SummaryService.updateSummary(
       dataToUpdate,
       ctx.state.summary
@@ -30,6 +31,11 @@ export default {
     const { summary } = ctx.state
     const deletedSummary = await summary.remove()
 
-    ctx.body = { data: deletedSummary._id }
+    ctx.body = { data: deletedSummary.hash }
+  },
+
+  getSummary(ctx) {
+    const { summary } = ctx.state
+    ctx.body = { data: pick(summary, Summary.createFields) }
   }
 }

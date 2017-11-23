@@ -1,9 +1,10 @@
 ### Summary app (making through the Khotey's video course)
 
-Summary delete
+Add hash generation for User and Summary. Add Summary get "/:hash" route
 
 Was done
 
-* create route
-* create delete methods in Summary Contoroller and Service
-* create AppError
+* install uuid
+* add hash fields to schemas
+* add hash generation to pre-save hook
+* add Summary get "/:hash" route, method in controller and service

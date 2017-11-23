@@ -1,11 +1,16 @@
 import mongoose, { Schema } from "mongoose"
 import uniqueValidator from "mongoose-unique-validator"
 import bcrypt from "bcrypt"
+import uuid from "uuid/v4"
 
 mongoose.plugin(uniqueValidator)
 
 const UserSchema = new Schema(
   {
+    hash: {
+      type: String,
+      unique: "Hash must be unique"
+    },
     email: {
       type: String,
       unique: 'User with email "{VALUE}" already exist',
@@ -39,12 +44,14 @@ const UserSchema = new Schema(
 UserSchema.statics.createFields = ["email", "password", "firstName", "lastName"]
 
 UserSchema.pre("save", function(next) {
-  if (!this.isModified("password")) {
-    return next()
+  if (this.isModified("password")) {
+    const salt = bcrypt.genSaltSync(10)
+    this.password = bcrypt.hashSync(this.password, salt)
   }
 
-  const salt = bcrypt.genSaltSync(10)
-  this.password = bcrypt.hashSync(this.password, salt)
+  if (!this.hash) {
+    this.hash = uuid()
+  }
 
   return next()
 })
