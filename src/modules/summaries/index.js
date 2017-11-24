@@ -1,5 +1,5 @@
 import Router from "koa-router"
-import summariesController from "./controllers/summaries-controller"
+import SummariesController from "./controllers/summaries-controller"
 import checkUser from "../../handlers/check-user"
 import checkSummary from "./handlers/check-summary"
 import checkPermission from "./handlers/check-permission"
@@ -8,11 +8,11 @@ import { Summary } from "./models"
 const router = new Router({ prefix: "/summaries" })
 
 router
-  .post("/", checkUser, summariesController.create)
+  .post("/", checkUser, SummariesController.create)
   .param("hash", checkSummary)
-  .put("/:hash", checkUser, checkPermission, summariesController.update)
-  .delete("/:hash", checkUser, checkPermission, summariesController.delete)
-  .get("/:hash", summariesController.getSummary)
+  .put("/:hash", checkUser, checkPermission, SummariesController.update)
+  .delete("/:hash", checkUser, checkPermission, SummariesController.delete)
+  .get("/:hash", SummariesController.getSummary)
 
 export { Summary }
 
