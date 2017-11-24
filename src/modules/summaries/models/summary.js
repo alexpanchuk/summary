@@ -6,9 +6,9 @@ const SummarySchema = new Schema({
     type: String,
     unique: "Hash must be unique"
   },
-  userId: {
+  userHash: {
     type: String,
-    required: "User id is required"
+    required: "User hash is required"
   },
   title: {
     type: String,

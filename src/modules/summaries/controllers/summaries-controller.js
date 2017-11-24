@@ -4,13 +4,13 @@ import SummaryService from "../services/summary-service"
 
 export default {
   async create(ctx) {
-    const summaryData = {
+    const data = {
       ...pick(ctx.request.body, Summary.createFields),
-      userId: ctx.state.user._id
+      userHash: ctx.state.user.hash
     }
 
-    const { _id } = await SummaryService.createSummary(summaryData)
-    const summary = await Summary.findOne({ _id })
+    const { hash } = await SummaryService.createSummary(data)
+    const summary = await Summary.findOne({ hash })
 
     ctx.status = 201
     ctx.body = { data: summary }
@@ -30,7 +30,7 @@ export default {
     const { summary } = ctx.state
     const deletedSummary = await summary.remove()
 
-    ctx.body = { data: deletedSummary.hash }
+    ctx.body = { data: { hash: deletedSummary.hash } }
   },
 
   getSummary(ctx) {

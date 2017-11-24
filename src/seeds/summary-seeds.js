@@ -14,7 +14,7 @@ function init(amount, users) {
       title: faker.lorem.words(2, 5),
       description: faker.lorem.lines(4, 10),
       tags: faker.lorem.words(2, 6).split(" "),
-      userId: users[faker.random.number(0, users.length - 1)]._id
+      userHash: users[faker.random.number(0, users.length - 1)].hash
     })
 
     promises.push(summaryPromise)

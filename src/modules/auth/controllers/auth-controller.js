@@ -6,8 +6,8 @@ import { User } from "../../users/models"
 export default {
   async singUp(ctx) {
     const userData = pick(ctx.request.body, User.createFields)
-    const { _id } = await userService.createUser(userData)
-    const user = await userService.getUserWithPublicFields({ _id })
+    const { hash } = await userService.createUser(userData)
+    const user = await userService.getUserWithPublicFields({ hash })
 
     ctx.status = 201
     ctx.body = { data: user }
