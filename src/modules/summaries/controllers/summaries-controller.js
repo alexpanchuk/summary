@@ -18,7 +18,6 @@ export default {
 
   async update(ctx) {
     const dataToUpdate = pick(ctx.request.body, Summary.createFields)
-    console.log(`data to update: ${dataToUpdate.title}`)
     const updatedSummary = await SummaryService.updateSummary(
       dataToUpdate,
       ctx.state.summary
