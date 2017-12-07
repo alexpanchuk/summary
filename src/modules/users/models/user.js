@@ -42,6 +42,7 @@ const UserSchema = new Schema(
 )
 
 UserSchema.statics.createFields = ["email", "password", "firstName", "lastName"]
+UserSchema.statics.publicFields = ["hash", "email", "firstName", "lastName"]
 
 UserSchema.pre("save", function(next) {
   if (this.isModified("password")) {

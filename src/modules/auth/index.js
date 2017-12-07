@@ -7,8 +7,6 @@ const router = new Router({ prefix: "/auth" })
 router
   .post("/singup", authController.singUp)
   .post("/singin", authController.singIn)
-  .get("/private", checkUser, ctx => {
-    ctx.body = ctx.state.user
-  })
+  .get("/user", checkUser, authController.getCurrentUser)
 
 export default router.routes()
