@@ -1,6 +1,7 @@
 import pick from "lodash/pick"
 import { Summary } from "../models"
 import SummaryService from "../services/summary-service"
+import parseQueryForSearch from "../helpers/parseQueryForSearch"
 
 export default {
   async create(ctx) {
@@ -36,5 +37,25 @@ export default {
   getSummary(ctx) {
     const { summary } = ctx.state
     ctx.body = { data: pick(summary, Summary.publicFields) }
+  },
+
+  async searchSummaries(ctx) {
+    const queryParams = pick(ctx.request.query, [
+      "title",
+      "tags",
+      "size",
+      "page"
+    ])
+    const searchParams = parseQueryForSearch(queryParams)
+
+    const { summaries, ...rest } = await SummaryService.searchSummaries(
+      searchParams
+    )
+
+    ctx.body = {
+      data: summaries,
+      searchParams,
+      ...rest
+    }
   }
 }

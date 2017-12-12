@@ -1,10 +1,11 @@
 ### Summary app (making through the Khotey's video course)
 
-Routes. Get summareis
+Routes. Search summareis
 
 Was done
 
 * Refactoring. Move get /current-user from user- to auth-controller /user
-* remove yarn
-* create SummarySchema.statics.publicFields and use in contoller/getSummary
-* yarn comeback
+* Remove yarn
+* Create SummarySchema.statics.publicFields and use in contoller/getSummary
+* Yarn comeback
+* Implement summaries search

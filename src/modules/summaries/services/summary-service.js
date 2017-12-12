@@ -19,5 +19,31 @@ export default {
     summary.set(data)
 
     return summary.save()
+  },
+
+  async searchSummaries(params) {
+    const { title, tags, size, page } = params
+    const query = {
+      title: { $regex: title }
+    }
+
+    if (tags.length) {
+      query.tags = { $in: tags }
+    }
+
+    const count = await Summary.count(query)
+    const pages = Math.ceil(count / size)
+
+    const summaries = await Summary.find(query)
+      .sort({ updatedAt: -1 })
+      .limit(size)
+      .skip((page - 1) * size)
+
+    return {
+      summaries,
+      count,
+      pages,
+      page
+    }
   }
 }

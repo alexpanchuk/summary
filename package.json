@@ -1,12 +1,13 @@
 {
   "name": "start-nodejs",
   "version": "1.0.0",
-  "description": "Nodejs configuring new project",
+  "description": "Summaries App",
   "main": "index.js",
   "author": "Alex Panchuk <apanchuk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/server.js",
+    "start":
+      "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/server.js",
     "dev": "nodemon dev.js",
     "seed": "babel-node src/seeds",
     "dropdb": "babel-node src/utils/dropdb.js",
@@ -45,10 +46,7 @@
   },
   "eslintConfig": {
     "root": true,
-    "extends": [
-      "airbnb-base",
-      "prettier"
-    ],
+    "extends": ["airbnb-base", "prettier"],
     "env": {
       "node": true
     },
