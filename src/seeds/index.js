@@ -12,7 +12,7 @@ async function initSeeds() {
     const users = await userSeed(500)
     const summaries = await summarySeed(500, users)
 
-    console.log(summaries)
+    console.log(summaries[499])
   } catch (error) {
     console.log(error)
   } finally {
