@@ -35,6 +35,6 @@ export default {
 
   getSummary(ctx) {
     const { summary } = ctx.state
-    ctx.body = { data: pick(summary, Summary.createFields) }
+    ctx.body = { data: pick(summary, Summary.publicFields) }
   }
 }

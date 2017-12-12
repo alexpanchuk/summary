@@ -80,6 +80,12 @@ SummarySchema.statics.createFields = [
   "tags"
 ]
 
+SummarySchema.statics.publicFields = [
+  ...SummarySchema.statics.createFields,
+  "updatedAt",
+  "createdAt"
+]
+
 SummarySchema.pre("save", function(next) {
   if (!this.hash) {
     this.hash = uuid()
