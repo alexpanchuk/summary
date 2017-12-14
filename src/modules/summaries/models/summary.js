@@ -71,7 +71,6 @@ const SummarySchema = new Schema(
 )
 
 SummarySchema.statics.createFields = [
-  "hash",
   "title",
   "phone",
   "skype",

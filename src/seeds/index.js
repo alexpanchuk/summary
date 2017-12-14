@@ -9,10 +9,10 @@ async function initSeeds() {
   await mongoConnection.dropDatabase()
 
   try {
-    const users = await userSeed(500)
-    const summaries = await summarySeed(500, users)
+    const users = await userSeed(100)
+    const summaries = await summarySeed(100, users)
 
-    console.log(summaries[499])
+    console.log(summaries[99])
   } catch (error) {
     console.log(error)
   } finally {

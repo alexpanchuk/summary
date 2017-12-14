@@ -1,11 +1,9 @@
-import { MONGO_URI } from "../config"
-import mongooseConnector from "../connectors/mongoose-connector"
+import { connect, dropDb, close } from "./mongo/index"
 
-async function dropDb() {
-  const mongoConnection = await mongooseConnector(MONGO_URI)
-  await mongoConnection.dropDatabase()
-  console.log("Mongo dropped")
-  mongoConnection.close()
+async function dropDatabase() {
+  await connect()
+  dropDb()
+  close()
 }
 
-dropDb()
+dropDatabase()

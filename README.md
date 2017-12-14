@@ -1,11 +1,8 @@
 ### Summary app (making through the Khotey's video course)
 
-Routes. Search summareis
+Routes. Testing
 
 Was done
 
-* Refactoring. Move get /current-user from user- to auth-controller /user
-* Remove yarn
-* Create SummarySchema.statics.publicFields and use in contoller/getSummary
-* Yarn comeback
-* Implement summaries search
+* add test environment to config, install jest & supertest & cross-env
+* create helpers for local db (create, drop, close)

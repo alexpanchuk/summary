@@ -9,18 +9,22 @@
     "start":
       "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/server.js",
     "dev": "nodemon dev.js",
+    "test": "cross-env NODE_ENV=test jest ./src",
     "seed": "babel-node src/seeds",
     "dropdb": "babel-node src/utils/dropdb.js",
     "lint:js": "eslint ./src",
     "precommit": "eslint ./src"
   },
   "devDependencies": {
+    "cross-env": "^5.1.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.0.2",
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-import": "^2.7.0",
     "husky": "^0.14.3",
-    "nodemon": "^1.12.1"
+    "jest": "^21.2.1",
+    "nodemon": "^1.12.1",
+    "supertest": "^3.0.0"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -82,5 +86,9 @@
         }
       ]
     ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "browser": false
   }
 }
