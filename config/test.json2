@@ -1,0 +1,6 @@
+{
+  "env": "test",
+  "mongo": {
+    "uri": "mongodb://summary-user:qwerty@ds255455.mlab.com:55455/summary"
+  }
+}

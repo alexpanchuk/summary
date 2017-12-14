@@ -24,7 +24,7 @@ export default {
   async searchSummaries(params) {
     const { title, tags, size, page } = params
     const query = {
-      title: { $regex: title }
+      title: { $regex: new RegExp(title, "ig") }
     }
 
     if (tags.length) {
@@ -42,8 +42,7 @@ export default {
     return {
       summaries,
       count,
-      pages,
-      page
+      pages
     }
   }
 }

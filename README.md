@@ -6,4 +6,6 @@ Was done
 
 * add test environment to config, install jest & supertest & cross-env
 * create helpers for local db (create, drop, close)
-* create test for SummaryService
+* create tests for SummaryService
+* create tests for parseQueryForSearch
+* create tests for Summary routes
