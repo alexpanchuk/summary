@@ -9,7 +9,7 @@
     "start":
       "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/server.js",
     "dev": "nodemon dev.js",
-    "test": "cross-env NODE_ENV=test jest ./src",
+    "test": "cross-env NODE_ENV=test jest src",
     "seed": "babel-node src/seeds",
     "dropdb": "babel-node src/utils/dropdb.js",
     "lint:js": "eslint ./src",
@@ -52,7 +52,8 @@
     "root": true,
     "extends": ["airbnb-base", "prettier"],
     "env": {
-      "node": true
+      "node": true,
+      "jest": true
     },
     "globals": {
       "AppError": true
