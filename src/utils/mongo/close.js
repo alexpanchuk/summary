@@ -1,3 +1,3 @@
 import mongoose from "mongoose"
 
-export default () => mongoose.connection.close()
+export default cb => mongoose.connection.close(cb)

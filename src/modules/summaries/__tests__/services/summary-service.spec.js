@@ -12,8 +12,11 @@ describe("Summary Service", () => {
   })
 
   afterAll(async () => {
-    await dropDb()
     await close()
+  })
+
+  afterEach(async () => {
+    await dropDb()
   })
 
   it("Should create summary as expected", async () => {
@@ -31,8 +34,6 @@ describe("Summary Service", () => {
     expect(summary).toHaveProperty("hash")
     expect(summary).toHaveProperty("createdAt")
     expect(summary).toHaveProperty("updatedAt")
-
-    await dropDb()
   })
 
   it("Should throw an error when user create more then 3 summaries", async () => {
@@ -57,7 +58,6 @@ describe("Summary Service", () => {
         })
       )
     }
-    await dropDb()
   })
 
   it("Should throw validation error for missing fields when create summary", async () => {
@@ -71,7 +71,5 @@ describe("Summary Service", () => {
       expect(errors).toHaveProperty("description")
       expect(errors).toHaveProperty("tags")
     }
-
-    await dropDb()
   })
 })

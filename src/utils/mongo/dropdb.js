@@ -1,3 +1,3 @@
 import mongoose from "mongoose"
 
-export default () => mongoose.connection.db.dropDatabase()
+export default cb => mongoose.connection.db.dropDatabase(cb)
