@@ -1,11 +1,36 @@
-### Summary app (making during the Khotey's video course)
+# Summary App
 
-Routes. Testing
+build during Vitaliy Khotey's video course
 
-Was done
+## WIP
 
-* add test environment to config, install jest & supertest & cross-env
-* create helpers for local db (create, drop, close)
-* create tests for SummaryService
-* create tests for parseQueryForSearch
-* create tests for Summary routes
+Applicatoin for creating and searching summaries.  
+Built for training with Javacript-fullstack technologies.  
+Back-end is ready.  
+Front-end in progress.
+
+```
+clone this repo
+
+yarn - install dependencies
+yarn dev - run dev server on localhost:4000
+yarn test - run tests
+```
+
+### Dependencies
+
+* Koa
+* JWT
+* Jest
+* MongoDB, Mongoose
+
+### Complete
+
+* RESTful API
+* JWT auth
+* Seeds
+* Unit test
+
+### TODO
+
+* Front-end (React, Redux)
