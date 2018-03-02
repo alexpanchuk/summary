@@ -1,4 +1,4 @@
-### Summary app (making through the Khotey's video course)
+### Summary app (making during the Khotey's video course)
 
 Routes. Testing
 
